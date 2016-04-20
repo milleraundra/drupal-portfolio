@@ -1,0 +1,24 @@
+a span {
+  font-family: 'Lucida Sans','Lucida Grande',Sans-Serif;
+  font-weight: normal;
+  background-color: #b5353b;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+
+#block-block-3 h2 {
+  font-size: 34px;
+}
+
+.content p {
+  font-size: 14px;
+}
+
+li a {
+  font-size: 13px;
+  font-weight: normal;
+  font-family: 'Lucida Sans','Lucida Grande',Sans-Serif;
+}
+
