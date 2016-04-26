@@ -1,5 +1,5 @@
 name = Cards
 description = Display unique cards for friends
-package = Epicodus Examples
+package = Custom Modules
 core = 7.x
 files[] = cards.module

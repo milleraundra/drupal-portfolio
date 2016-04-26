@@ -8,6 +8,7 @@ function cards_menu() {
             'title' => 'Hello, ' . $friend . '!',
             'page callback' => 'friend_message',
             'page arguments' => array($friend),
+            'menu_name' => 'menu-custom-modules',
             'access callback' => TRUE,
             'type' => MENU_NORMAL_ITEM,
         );

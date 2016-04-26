@@ -1,5 +1,5 @@
 name = User Greetings
 description = Display greetings based on role.
-package = Epicodus Examples
+package = Custom Modules
 core = 7.x
 files[] = user_greetings.module

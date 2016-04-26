@@ -1,5 +1,5 @@
 name = Hello User
 description = greets new users
-package = Epicodus Examples
+package = Custom Modules
 core = 7.x
 files[] = hello_user.module
