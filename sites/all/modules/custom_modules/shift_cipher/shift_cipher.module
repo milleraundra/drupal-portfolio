@@ -41,7 +41,7 @@ function shift_cipher_form() {
         '#title' => t("Enter a direction (left or right)."),
         '#type' => 'textfield',
         '#required' => TRUE,
-        // '#element_validate' => array('element_validate_direction'),
+        '#element_validate' => array('element_validate_direction'),
     );
     $form['submit'] = array(
         '#value' => t('Submit your vote!'),
@@ -62,18 +62,29 @@ function element_validate_sanitize($element) {
         form_error($element, "You cannot use numbers in your string.");
     }
 }
-//
-// function element_validate_direction($element) {
-//     //$direction = $form_state['#values']['#direction'];
-//     //if ( $direction !== 'left' || $direction !== 'right') {
-//     //form_error();
-//     // }
-// }
 
+function element_validate_direction($element) {
+    $direction = $element['#value'];
+    if ( $direction !== 'left' && $direction !== 'right') {
+        form_error($element, "Choose 'left' or 'right'. Case sensative. ");
+    }
+}
+
+
+//submit and calculations
 function shift_cipher_form_submit($form, &$form_state) {
+    $string = $form_state['values']['string'];
+    $distance = $form_state['values']['distance'];
+    $direction = $form_state['values']['direction'];
+    $_SESSION['encrypted_message'] = $string;
     $form_state['redirect'] = 'cipher_output';
 }
 
 function cipher_results() {
-    return " Hi, " . $_SESSION['banana'] . ".";
+    $message = "
+        <h4>Here is your final message:</h4>
+        <p>" . $_SESSION['encrypted_message']. " </p>
+        <a href='/cipher_input'>Play Again</a>
+    ";
+    return $message;
 }
