@@ -1,0 +1,9 @@
+.content .view-portfolio tbody tr td {
+    border: none;
+    padding-bottom: 15px;
+}
+
+.content .view-portfolio tbody tr td .views-field-title a {
+    font-size: 1.5em;
+}
+
