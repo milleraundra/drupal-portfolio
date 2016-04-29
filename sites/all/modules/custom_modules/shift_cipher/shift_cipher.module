@@ -73,10 +73,47 @@ function element_validate_direction($element) {
 
 //submit and calculations
 function shift_cipher_form_submit($form, &$form_state) {
-    $string = $form_state['values']['string'];
+    //user input
+    $lowercase_string = strtolower($form_state['values']['string']);
+    $string_to_array = str_split($lowercase_string);
     $distance = $form_state['values']['distance'];
     $direction = $form_state['values']['direction'];
-    $_SESSION['encrypted_message'] = $string;
+    //resources
+    global $alphabet;
+    $punctuation_and_spaces = '/[!?.,":;()\'\-\s*]/';
+    $final_array = array();
+
+
+    foreach ($string_to_array as $character) {
+        //check for punctuation and spaces
+        if (preg_match($punctuation_and_spaces, $character) === 1) {
+            array_push($final_array, $character);
+        } else {
+            for ($i = 0; $i < count($alphabet); $i++) {
+                if ($alphabet[$i] === $character) {
+                    //determine index of new letter based on direction given
+                    if ($direction === 'left') {
+                        $new_index = $i - $distance;
+                    } else {
+                        $new_index = $i + $distance;
+                    }
+                    //account for numbers outside array length
+                    if($new_index < 0) {
+                        $new_index = $new_index + 26;
+                    } elseif ($new_index > 25) {
+                        $new_index = $new_index - 26;
+                    }
+
+                    array_push($final_array, $alphabet[$new_index]);
+                } else {
+
+                }
+            }
+        }
+    }
+
+    $final_string = implode($final_array);
+    $_SESSION['encrypted_message'] = $final_string;
     $form_state['redirect'] = 'cipher_output';
 }
 
