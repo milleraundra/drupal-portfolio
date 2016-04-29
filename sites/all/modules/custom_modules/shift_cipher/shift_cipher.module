@@ -29,7 +29,7 @@ function shift_cipher_form() {
         '#title' => t("Enter text to encrypt."),
         '#type' => 'textfield',
         '#required' => TRUE,
-        // '#element_validation' => array('element_validate_sanitize'),
+        '#element_validation' => array('element_validate_sanitize'),
     );
     $form['cipher_form']['distance'] = array(
         '#title' => t("Enter a distance (e.g. 1, -3, or 14)."),
@@ -50,16 +50,19 @@ function shift_cipher_form() {
     return $form;
 }
 
-//
-// //validation
-// function element_validate_sanitize($element) {
-//     // $string_to_array = str_split($form_state['#values']['#string'])
-//     // loop through array, checking against regex
-//         // no numbers
-//         // no characters other than punctuation and spaces
-//
-//     // if found, form_error
-// }
+
+//validation
+function element_validate_sanitize($element) {
+    $string = $element['#value'];
+    $special_characters = '/[^\w!?.\s*]/g';
+    var_dump($string);
+    $numbers = '/[0-9]/g';
+    if (preg_match($string, $special_characters) === 1) {
+        form_error($element, "Only include punctuation in your text.");
+    } elseif ( preg_match($string, $numbers) === 1) {
+        form_error($element, "You cannot use numbers in your string.");
+    }
+}
 //
 // function element_validate_direction($element) {
 //     //$direction = $form_state['#values']['#direction'];
@@ -72,6 +75,6 @@ function shift_cipher_form_submit($form, &$form_state) {
     $form_state['redirect'] = 'cipher_output';
 }
 
-function shift_cipher_result() {
-    return "Hello, World!";
+function cipher_results() {
+    return "Hello, Cheetah!";
 }
