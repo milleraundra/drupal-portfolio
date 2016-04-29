@@ -74,15 +74,15 @@ function element_validate_direction($element) {
 //submit and calculations
 function shift_cipher_form_submit($form, &$form_state) {
     //user input
-    $lowercase_string = strtolower($form_state['values']['string']);
-    $string_to_array = str_split($lowercase_string);
+    // $lowercase_string = strtolower($form_state['values']['string']);
+    $string_to_array = str_split($form_state['values']['string']);
     $distance = $form_state['values']['distance'];
     $direction = $form_state['values']['direction'];
     //resources
     global $alphabet;
     $punctuation_and_spaces = '/[!?.,":;()\'\-\s*]/';
     $final_array = array();
-
+    $count = 0;
 
     foreach ($string_to_array as $character) {
         //check for punctuation and spaces
@@ -90,7 +90,8 @@ function shift_cipher_form_submit($form, &$form_state) {
             array_push($final_array, $character);
         } else {
             for ($i = 0; $i < count($alphabet); $i++) {
-                if ($alphabet[$i] === $character) {
+                if ( $alphabet[$i] === $character || strtoupper($alphabet[$i]) === $character ) {
+                    $count++;
                     //determine index of new letter based on direction given
                     if ($direction === 'left') {
                         $new_index = $i - $distance;
@@ -104,7 +105,12 @@ function shift_cipher_form_submit($form, &$form_state) {
                         $new_index = $new_index - 26;
                     }
 
-                    array_push($final_array, $alphabet[$new_index]);
+                    if ($character === strtoupper($alphabet[$i])) {
+                        array_push($final_array, strtoupper($alphabet[$new_index]));
+                    } else {
+                        array_push($final_array, $alphabet[$new_index]);
+                    }
+
                 } else {
 
                 }

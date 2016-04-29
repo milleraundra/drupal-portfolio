@@ -1,4 +1,18 @@
 
+
+
+
+
+
+Completed:
+
+A user can enter a value, direction, and phrase
+- 3
+- right
+- "Food"
+On submit, the form redirects to a new page
+
+
 /*Custom Validation*/
 The string cannot contain numbers
 The string cannot container characters other than spaces and punctuation. //regex
@@ -12,30 +26,6 @@ The array is returned.
 The program handles spaces (1)
 The program handles punctuation (2)
 Knows to wrap around the array for
-
-
-1, 2:
-    if ($i === "") {
-    push to array
-    } elseif ($i === /regex for punctuation/) {
-    push to array
-    } else {
-    run other functionality
-    }
-
-
-
-Completed:
-
-A user can enter a value, direction, and phrase
-- 3
-- right
-- "Food"
-On submit, the form redirects to a new page
-
-
-
-
 
 
 ? How would I maintain capitalization ?
