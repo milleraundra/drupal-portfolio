@@ -1,0 +1,77 @@
+<?php
+
+global $alphabet;
+$alphabet = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+
+function shift_cipher_menu() {
+    $items['cipher_input'] = array(
+        'title' => 'Shift Cipher',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('shift_cipher_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['cipher_output'] = array(
+        'title' => 'Message Encrypted!',
+        'page callback' => 'cipher_results',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function shift_cipher_form() {
+    $form['cipher_form'] = array(
+        '#title' => t('Encrypt Your Message With Shift Cipher!'),
+        '#type' => 'fieldset',
+    );
+    $form['cipher_form']['string'] = array(
+        '#title' => t("Enter text to encrypt."),
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        // '#element_validation' => array('element_validate_sanitize'),
+    );
+    $form['cipher_form']['distance'] = array(
+        '#title' => t("Enter a distance (e.g. 1, -3, or 14)."),
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        '#element_validation' => array('element_validate_integer_positive'),
+    );
+    $form['cipher_form']['direction'] = array(
+        '#title' => t("Enter a direction (left or right)."),
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        // '#element_validation' => array('element_validate_direction'),
+    );
+    $form['submit'] = array(
+        '#value' => t('Submit your vote!'),
+        '#type' => 'submit',
+    );
+    return $form;
+}
+
+//
+// //validation
+// function element_validate_sanitize($element) {
+//     // $string_to_array = str_split($form_state['#values']['#string'])
+//     // loop through array, checking against regex
+//         // no numbers
+//         // no characters other than punctuation and spaces
+//
+//     // if found, form_error
+// }
+//
+// function element_validate_direction($element) {
+//     //$direction = $form_state['#values']['#direction'];
+//     //if ( $direction !== 'left' || $direction !== 'right') {
+//     //form_error();
+//     // }
+// }
+
+function shift_cipher_form_submit($form, &$form_state) {
+    $form_state['redirect'] = 'cipher_output';
+}
+
+function shift_cipher_result() {
+    return "Hello, World!";
+}
