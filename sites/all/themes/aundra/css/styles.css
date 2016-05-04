@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  background-color: #F0F7EE;
+}
+
+#header {
+  height: 40px;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 30px;
+}
+
+#header a, #header a:link {
+  color: #776871;
+  text-decoration: none;
+}
+
+#navigation h2 {
+  display: none;
+}
+
+#secondary-menu {
+  float: right;
+  clear: none;
+}
+
+#main-menu {
+  /*float: right;*/
+}
+
+#content {
+  width: 70%;
+  float: left;
+}
+
+#sidebar-second {
+  width: 30%;
+  float: right;
+  clear: right;
+}
+
+
+
+/*
+grey-white: #F0F7EE
+blue: #C4D7F2
+grey-purple: #B7A6B7
+green: #91A8A4
+dark grey purple: #776871
+*/
