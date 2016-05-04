@@ -1,0 +1,29 @@
+ul.main-menu li a, ul.main-menu li a:link {
+  color: black !important;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+#wrapper #container #header {
+  height: 100px;
+}
+
+#wrapper #container #header #logo-floater {
+  text-align: center;
+  width: 100%;
+}
+
+#branding span {
+  color: #333;
+  text-shadow: 0px 0px #000;
+  font-size: 1.2em;
+}
+
+img {
+  width: 100%;
+}
+
+.right-corner img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
