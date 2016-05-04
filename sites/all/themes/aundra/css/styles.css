@@ -1,6 +1,12 @@
 body {
   font-family: sans-serif;
   background-color: #F0F7EE;
+  margin-bottom: 0px;
+}
+
+#page {
+  margin-bottom: 0px;
+  min-height: 100%;
 }
 
 #header {
@@ -24,11 +30,7 @@ body {
   clear: none;
 }
 
-#main-menu {
-  /*float: right;*/
-}
-
-#content {
+#content, #main-menu, #sidebar-first {
   width: 70%;
   float: left;
 }
@@ -37,6 +39,18 @@ body {
   width: 30%;
   float: right;
   clear: right;
+}
+
+#footer .content{
+  background-color: #776871;
+  text-align: center;
+  color: #F0F7EE;
+  margin: 0px;
+  height: 50px;
+}
+
+#footer p {
+  padding-top: 15px;
 }
 
 
