@@ -1,4 +1,16 @@
-body, .title {
+body {
+    color: #000;
+    font-size: 1.2em;
+}
+
+
+#site_name {
+    color: #000;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.title {
     color: #000;
 }
 
@@ -27,10 +39,6 @@ a, a:link, a:visited, #footer a {
 #main img {
     max-width: 700px;
     height: auto;
-}
-
-#site_name {
-    color: #000;
 }
 
 #breadcrumb {
