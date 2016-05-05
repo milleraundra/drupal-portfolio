@@ -21,7 +21,7 @@
 				<div class="slidertext" style="display: none;"><?php echo theme_get_setting('slider_two_desc'); ?></div>
 				<div class="slidertext" style="display: none;"><?php echo theme_get_setting('slider_three_desc'); ?></div>
 			</div>
-		</div>        
+		</div>
 		<div class="paging">
 			<a rel="1" href="#">1</a>
 			<a rel="2" href="#">2</a>

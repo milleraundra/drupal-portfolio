@@ -91,13 +91,20 @@ function shift_cipher_form_submit($form, &$form_state) {
             for ($i = 0; $i < count($alphabet); $i++) {
                 if ( $alphabet[$i] === $character || strtoupper($alphabet[$i]) === $character ) {
                     //determine index of new letter based on direction given
+
                     if ($direction == 'left') {
                         $new_index = $i - $distance;
                     } else {
                         $new_index = $i + $distance;
                     }
                     //account for numbers outside array length
-                    if($new_index < 0 || $new_index > 25) {
+
+                    if($new_index < 0 ) {
+                      do {
+                        $new_index += 26;
+                      } while ($new_index < 0);
+
+                    } elseif ($new_index > 25) {
                         $new_index = abs($new_index % 26);
                     }
 
