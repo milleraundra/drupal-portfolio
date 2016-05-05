@@ -5,7 +5,7 @@
 			<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 		  </a>
 		<?php else: ?>
-			<h1 id="site_name">Hello, World!</h1>
+			<h1 id="site_name">Aundra Miller - Junior Web Developer</h1>
 		<?php endif; ?>
 		<div id="social">
 			<?php if (theme_get_setting('social_icons')): ?>
