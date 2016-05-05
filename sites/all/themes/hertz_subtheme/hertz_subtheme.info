@@ -1,0 +1,24 @@
+name = Hertz subtheme
+description = Sub theme using Hertz contrib theme
+core = 7.x
+base theme = Hertz
+
+stylesheets[all][] = style.css
+stylesheets[all][] = hertz_subtheme.css
+
+regions[search_box]     = Search Box
+regions[navigation]     = Navigation
+regions[highlighted]    = Highlighted
+regions[help]           = Help
+regions[content]        = Content
+regions[sidebar_first]  = Left Sidebar
+regions[sidebar_second] = Right Sidebar
+regions[footer_one]     = Footer First
+regions[footer_two]     = Footer Second
+regions[footer_three]   = Footer Three
+regions[footer]         = Footer
+regions[homepage_header]  = Homepage Header
+regions[homepage_one]     = Homepage Block One
+regions[homepage_two]     = Homepage Block Two
+regions[homepage_three]   = Homepage Block Three
+regions[homepage_content] = Homepage Content
