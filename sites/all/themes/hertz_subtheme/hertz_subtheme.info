@@ -3,8 +3,11 @@ description = Sub theme using Hertz contrib theme
 core = 7.x
 base theme = Hertz
 
-stylesheets[all][] = style.css
-stylesheets[all][] = hertz_subtheme.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/hertz_subtheme.css
+stylesheets[all][] = css/animate.css
+
+scripts[] = js/scripts.js
 
 regions[search_box]     = Search Box
 regions[navigation]     = Navigation

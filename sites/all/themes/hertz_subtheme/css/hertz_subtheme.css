@@ -7,8 +7,13 @@
   font-size: 1.2em;
 }
 
-a, a:link {
+a, a:link, a:visited, #footer a {
+    font-weight: bold;
   color: #508991;
+}
+
+#navigation ul.menu li a {
+    font-weight: bold;
 }
 
 #navigation ul.menu li a.active, #navigation ul.menu li a:hover {
@@ -21,5 +26,5 @@ a, a:link {
 }
 
 #site_name {
-  color: #000;
+    color: #000;
 }
