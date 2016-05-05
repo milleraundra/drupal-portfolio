@@ -1,0 +1,16 @@
+#content{
+  background-color: #ddd;
+}
+
+#content p {
+  color: #000;
+  font-size: 1.2em;
+}
+
+a, a:link {
+  color: #508991;
+}
+
+#navigation ul.menu li a.active, #navigation ul.menu li a:hover {
+    color: #508991;
+}
