@@ -4,6 +4,8 @@
 		  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" id="logo">
 			<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 		  </a>
+		<?php else: ?>
+			<h1 id="site_name">Hello, World!</h1>
 		<?php endif; ?>
 		<div id="social">
 			<?php if (theme_get_setting('social_icons')): ?>
@@ -23,8 +25,8 @@
 </div> <!-- /#header-top -->
 <nav id="navigation" class="navigation">
 	<div class="container clearfix">
-		<?php 
-		$main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
+		<?php
+		$main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
 		print drupal_render($main_menu_tree);
 		?>
 	</div>
