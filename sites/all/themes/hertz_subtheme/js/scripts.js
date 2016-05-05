@@ -8,7 +8,4 @@ jQuery(document).ready(function($) {
         $(this).removeClass('pulse');
     });
 
-    // $('a.animated').mouseover(function() {
-    //     $(this).addClass('pulse');
-    // });
 });

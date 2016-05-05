@@ -1,3 +1,7 @@
+body, .title {
+    color: #000;
+}
+
 #content{
   background-color: #ddd;
 }
@@ -27,4 +31,20 @@ a, a:link, a:visited, #footer a {
 
 #site_name {
     color: #000;
+}
+
+#breadcrumb {
+    background-color: #C0BCB5;
+}
+
+.submitted {
+    background-color: #d3d3d3;
+}
+
+/*page slider*/
+.slidertitle {
+    background-color: #074F57;
+}
+.slidertext{
+    background-color: #508991;
 }
