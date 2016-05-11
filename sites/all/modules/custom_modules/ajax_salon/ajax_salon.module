@@ -38,8 +38,19 @@ function ajax_salon_form($form, &$form_state) {
     );
     $form['submit'] = array(
         '#type' => 'submit',
+        '#ajax' => array(
+          'callback' => 'ajax_salon_submit',
+          'wrapper' => 'choice',
+        ),
         '#value' => t('Submit'),
     );
+
+    $form['choice'] = array(
+    '#type' => 'fieldset',
+    '#title' => t("Your Choice"),
+    '#prefix' => "<div id='choice'>",
+    '#suffix' => '</div>',
+);
     return $form;
 }
 
@@ -77,4 +88,10 @@ function ajax_salon_stylist_dropdown($type = '') {
     } else {
         return array();
     }
+}
+
+function ajax_salon_submit($form_id, &$form_state) {
+
+    return $form_state['choice']['#description'] = t("You have chosen a @first by @second", array('@first' => $form_state['values']['dropdown_first'], '@second' => $form_state['values']['dropdown_second']));
+
 }

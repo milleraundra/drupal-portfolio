@@ -3,7 +3,7 @@
 function simple_ajax_menu() {
     $items = array();
 
-    $items['examples/ajax_example'] = array(
+    $items['examples/original_ajax_example'] = array(
         'title' => 'Simple Ajax form',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('simple_ajax_example'),
