@@ -48,9 +48,12 @@ function ajax_salon_form($form, &$form_state) {
     $form['choice'] = array(
     '#type' => 'fieldset',
     '#title' => t("Your Choice"),
-    '#prefix' => "<div id='choice'>",
-    '#suffix' => '</div>',
-);
+    );
+
+    $form['choice']['show'] = array(
+        '#prefix' => "<div id='choice'>",
+        '#suffix' => '</div>',
+    );
     return $form;
 }
 
