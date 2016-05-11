@@ -1,0 +1,5 @@
+name = "Ajax Time Module"
+description = "Shows the time via ajax when link is clicked."
+package = Custom Modules
+core = 7.x
+scripts[] = ajax_time.js
