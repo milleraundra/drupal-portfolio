@@ -31,19 +31,19 @@ function user_greetings_menu() {
 
 function say_hello($user) {
     if($user == 'administrator') {
-        return '<p>YOU ARE IN CHARGE!</p>';
+        return '<p>You can do this. GO.</p>';
     } elseif ($user == 'moderator') {
-        return '<p>Use your power wisely.</p>';
+        return '<p>Welcome, moderator!</p>';
     } else {
-        return '<p>Nice to See You!</p>';
+        return "<p>Welcome! It's good to see you again!</p>";
     }
 }
 
 function say_farewell($user) {
     if($user == 'administrator') {
-        return '<p>YOU ARE STILL IN CHARGE!</p>';
+        return "<p>Go get 'em.</p>";
     } elseif ($user == 'moderator') {
-        return '<p>Thanks for your help!</p>';
+        return '<p>Thank you for your help!</p>';
     } else {
         return '<p>Come Back Soon!</p>';
     }

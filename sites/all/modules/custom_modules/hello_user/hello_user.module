@@ -11,7 +11,7 @@ function hello_user_menu(){
 }
 
 function hello_message(){
-    return '<h2> HI NEW USER! WELCOME TO OUR COOL SITE! (we will authenticate you and then you can actually use it)</h2>
+    return '<h2>Thank you for creating an account! Give us some time to authenticate your account, and then you should be ready to go.</h2>
     <a href="/">Home</a>
     <br>
     <a href="about">About</a>';

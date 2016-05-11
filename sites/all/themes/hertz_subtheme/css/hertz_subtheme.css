@@ -1,9 +1,22 @@
+/*General Styles*/
 body {
     color: #000;
     font-size: 1.2em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+}
 
+#content{
+  background-color: #ddd;
+}
+
+.block-title {
+  color: #ddd;
+}
+
+/* Header Styles */
 #site_name {
     color: #000;
     margin-top: 0px;
@@ -14,10 +27,17 @@ body {
     color: #000;
 }
 
-#content{
-  background-color: #ddd;
+/* Navigation */
+
+#navigation ul.menu li a {
+  font-weight: bold;
 }
 
+#navigation ul.menu li a.active, #navigation ul.menu li a:hover {
+  color: #508991;
+}
+
+/*Content and Specific Styles */
 #content p {
   color: #000;
   font-size: 1.2em;
@@ -26,14 +46,6 @@ body {
 a, a:link, a:visited, #footer a {
     font-weight: bold;
   color: #508991;
-}
-
-#navigation ul.menu li a {
-    font-weight: bold;
-}
-
-#navigation ul.menu li a.active, #navigation ul.menu li a:hover {
-    color: #508991;
 }
 
 #main img {
@@ -47,6 +59,21 @@ a, a:link, a:visited, #footer a {
 
 .submitted {
     background-color: #d3d3d3;
+}
+
+/*Forms */
+input {
+  height: 35px;
+}
+
+input#edit-submit:hover {
+    color: #508991;
+}
+
+
+/*Portfolio Page */
+.view-portfolio .views-field.views-field-title {
+    font-size: 1.5em;
 }
 
 /*page slider*/
