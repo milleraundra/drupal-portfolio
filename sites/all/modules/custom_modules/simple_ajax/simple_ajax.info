@@ -1,0 +1,5 @@
+name = Simple Ajax Form
+description = Simple Ajax form
+package = Custom Modules
+core = 7.x
+files[] = simple_ajax.module
