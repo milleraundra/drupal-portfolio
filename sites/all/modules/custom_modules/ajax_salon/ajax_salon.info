@@ -1,0 +1,5 @@
+name = Ajax Salon Dropdowns
+description = AJAX Salon Dropdowns
+package = Custom Modules
+core = 7.x
+files[] = ajax_salon.module
