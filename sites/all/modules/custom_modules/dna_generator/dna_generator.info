@@ -1,0 +1,7 @@
+name = DNA generator
+description = Simple module to complete a string of DNA
+package = Custom Modules
+core = 7.x
+files[] = dna_generator.module
+files[] = dna_generator.test
+dependencies[] = simpletest
