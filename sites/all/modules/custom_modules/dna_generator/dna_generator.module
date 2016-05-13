@@ -36,6 +36,7 @@ function dna_form() {
     return $form;
 }
 
+//validation
 function element_validate_nucleotide($element) {
     $element_array = str_split(strtoupper($element['#value']));
     foreach($element_array as $letter) {
@@ -45,9 +46,15 @@ function element_validate_nucleotide($element) {
     }
 }
 
+//submit
 function dna_form_submit($form, &$form_state) {
-    $string_one = strtoupper($form_state['values']['input']);
-    $array_one = str_split($string_one);
+    $this->dna_generator($form_state['values']['input']);
+    $form_state['redirect'] = 'dna_generator_output';
+}
+
+
+function dna_generator($input) {
+    $array_one = str_split(strtoupper($input));
     $array_two = array();
 
     $nucleotide_array = array(
@@ -68,7 +75,6 @@ function dna_form_submit($form, &$form_state) {
     $string_two = implode($array_two);
     $_SESSION['helix_one'] = $string_one;
     $_SESSION['helix_two'] = $string_two;
-    $form_state['redirect'] = 'dna_generator_output';
 }
 
 function dna_generator_results() {

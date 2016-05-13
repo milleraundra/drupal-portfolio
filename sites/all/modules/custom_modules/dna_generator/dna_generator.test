@@ -18,25 +18,25 @@ class DNAGeneratorModuleTest extends DrupalUnitTestCase
         $description = 'Input of letter A should return T.';
         $input = 'A';
         $result = dna_generator($input);
-        $this->assertEquals('T', $result, $description);
+        $this->assertEqual('T', $result);
 
         //Letter T
         $description = 'Input of letter T should return A.';
         $input = 'T';
         $result = dna_generator($input);
-        $this->assertEquals('A', $result, $description);
+        $this->assertEqual('A', $result);
 
         //Letter C
         $description = 'Input of letter C should return G.';
         $input = 'C';
         $result = dna_generator($input);
-        $this->assertEquals('G', $result, $description);
+        $this->assertEqual('G', $result);
 
         //Letter G
         $description = 'Input of letter G should return C.';
         $input = 'G';
         $result = dna_generator($input);
-        $this->assertEquals('C', $result, $description);
+        $this->assertEqual('C', $result);
 
         //String of letters
         $description = 'Input of multiple values will return string of opposite values';
