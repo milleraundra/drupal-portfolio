@@ -1,0 +1,5 @@
+name = Ajax Portfolio Block
+description = Display node on page when link in block is clicked with AJAX
+package = Custom Modules
+core = 7.x
+files[] = ajax_portfolio.module
