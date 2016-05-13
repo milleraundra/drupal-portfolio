@@ -1,0 +1,1 @@
+[13-May-2016 14:09:44 America/Los_Angeles] PHP Fatal error:  Call to undefined method DNAGeneratorFunctionalTest::get() in /Users/Guest/Desktop/drupal-portfolio/sites/all/modules/custom_modules/dna_generator/dna_generator.test on line 24

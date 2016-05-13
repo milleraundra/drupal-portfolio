@@ -80,5 +80,5 @@ function dna_generator($input) {
 }
 
 function dna_generator_results() {
-    return "<p>" . $_SESSION['helix_one'] . "</p><p>" . $_SESSION['helix_two'] . "</p>";
+    return "<h2>1st Strand: " . $_SESSION['helix_one'] . "</h2><br><h2>2nd Strand: " . $_SESSION['helix_two'] . "</h2>";
 }
