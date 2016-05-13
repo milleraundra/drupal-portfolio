@@ -4,7 +4,7 @@ function dna_generator_menu() {
     $items['dna_generator_input'] = array(
         'title' => 'DNA Generator',
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('dna_generator_form'),
+        'page arguments' => array('dna_form'),
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
@@ -17,24 +17,51 @@ function dna_generator_menu() {
     return $items;
 }
 
-function dna_generator_form() {
-    $form['string'] = array(
+function dna_form() {
+    $form['box'] = array(
+        '#type' => 'fieldset',
+        '#title' => 'Create DNA Double Helix',
+    );
+//validation here
+    $form['box']['input'] = array(
         '#type' => 'textfield',
         '#title' => t('Enter String'),
         '#required' => TRUE,
     );
 
-    $form['submit'] = array(
+    $form['box']['submit'] = array(
         '#value' => t('Submit'),
         '#type' => 'submit',
     );
     return $form;
 }
 
-function dna_generator_form_submit($form, &$form_state) {
+function dna_form_submit($form, &$form_state) {
+    $string_one = strtoupper($form_state['values']['input']);
+    $array_one = str_split($string_one);
+    $array_two = array();
+
+    $nucleotide_array = array(
+        'T' => 'A',
+        'A' => 'T',
+        'C' => 'G',
+        'G' => 'C',
+    );
+
+    foreach($array_one as $letter) {
+        foreach ($nucleotide_array as $nucleotide_one => $nucleotide_two) {
+            if ($letter === $nucleotide_one) {
+                array_push($array_two, $nucleotide_two);
+            }
+        }
+    }
+
+    $string_two = implode($array_two);
+    $_SESSION['helix_one'] = $string_one;
+    $_SESSION['helix_two'] = $string_two;
     $form_state['redirect'] = 'dna_generator_output';
 }
 
 function dna_generator_results() {
-    return "<p>Hello, World!<p>";
+    return "<p>" . $_SESSION['helix_one'] . "</p><p>" . $_SESSION['helix_two'] . "</p>";
 }
