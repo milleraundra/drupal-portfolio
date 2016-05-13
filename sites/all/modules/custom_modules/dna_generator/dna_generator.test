@@ -1,10 +1,48 @@
 <?php
 
-/*
-* @file
-* ??
-*/
+class DNAGeneratorModuleTest extends DrupalUnitTestCase
+{
 
-class DNAGeneratorModuleTest extends DrupalUnitTestCase {
-  
+    public static function getInfo()
+    {
+        return array(
+            'name' => 'DNA Generator Unit Tests',
+            'description' => 'Test functionality of custom module DNA Generator',
+            'group' => 'Custom Modules',
+        );
+    }
+
+    function testDNAGenerator()
+    {
+        //Letter A
+        $description = 'Input of letter A should return T.';
+        $input = 'A';
+        $result = dna_generator($input);
+        $this->assertEquals('T', $result, $description);
+
+        //Letter T
+        $description = 'Input of letter T should return A.';
+        $input = 'T';
+        $result = dna_generator($input);
+        $this->assertEquals('A', $result, $description);
+
+        //Letter C
+        $description = 'Input of letter C should return G.';
+        $input = 'C';
+        $result = dna_generator($input);
+        $this->assertEquals('G', $result, $description);
+
+        //Letter G
+        $description = 'Input of letter G should return C.';
+        $input = 'G';
+        $result = dna_generator($input);
+        $this->assertEquals('C', $result, $description);
+
+        //String of letters
+        $description = 'Input of multiple values will return string of opposite values';
+        $input = 'TACGAGC';
+        $result = dna_generator($input);
+        $this->assertTrue('ATGCTCG', $result);
+    }
+
 }
