@@ -1,37 +1,40 @@
 <?php
 
-    function dna_generator_menu() {
-        $items['dna_generator_input'] = array(
-            'title' => 'DNA Generator',
-            'page callback' => 'drupal_get_form',
-            'page arguments' => array('dna_form'),
-            'access callback' => TRUE,
-            'type' => MENU_NORMAL_ITEM,
-        );
-        $items['dna_generator_output'] = array(
-            'title' => 'DNA Generator',
-            'page callback' => 'dna_generator_results',
-            'access callback' => TRUE,
-            'type' => MENU_CALLBACK,
-        );
-        return $items;
-    }
+function dna_generator_menu() {
+    $items['dna_generator_input'] = array(
+        'title' => 'DNA Generator',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('dna_generator_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['dna_generator_output'] = array(
+        'title' => 'DNA Generator',
+        'page callback' => 'dna_generator_results',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
 
-    function dna_form() {
-        $form['box'] = array(
-            '#type' => 'fieldset',
-            '#title' => 'Create DNA Double Helix',
-        );
+function dna_generator_form() {
+    $form['string'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Enter String'),
+        '#required' => TRUE,
+    );
 
-        $form['box']['input'] = array(
-            '#type' => 'textfield',
-            '#title' => t('Enter String'),
-            '#required' => TRUE,
-        );
+    $form['submit'] = array(
+        '#value' => t('Submit'),
+        '#type' => 'submit',
+    );
+    return $form;
+}
 
-        $form['box']['submit'] = array(
-            '#type' => 'submit',
-            '#value' => 'Submit',
-        );
-        return $form;
-    }
+function dna_generator_form_submit($form, &$form_state) {
+    $form_state['redirect'] = 'dna_generator_output';
+}
+
+function dna_generator_results() {
+    return "<p>Hello, World!<p>";
+}
