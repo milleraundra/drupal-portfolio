@@ -1,6 +1,40 @@
 <?php
 
-class DNAGeneratorModuleTest extends DrupalUnitTestCase
+/*
+* @file
+* Functional test for DNA Generator
+*/
+
+class DNAGeneratorFunctionalTest extends DrupalWebTestCase {
+
+    public static function getInfo() {
+        return array(
+            'name' => 'DNA Generator Web Tests',
+            'description' => 'Tests web functionality of custom module DNA Generator',
+            'group' => 'Custom Modules',
+        );
+    }
+
+    public function setUp() {
+        //enable module
+        parent::setUp(array('dna_generator'));
+    }
+
+    public function testDNAGeneratorReturn() {
+        $this->drupalGet('dna_generator_input');
+        $form_value = array();
+        $form_value['input'] = 'TAC';
+        $this->drupalPost('/dna_generator_input', $form_value, t('Submit'));
+
+        $this->assertText('TAC', 'Original Input');
+        $this->assertText('ATG', 'Second Input');
+    }
+
+}
+
+
+/* Unit Test for DNA Generator */
+class DNAGeneratorUnitTest extends DrupalUnitTestCase
 {
 
     public static function getInfo()
