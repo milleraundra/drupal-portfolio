@@ -20,8 +20,6 @@ function ajax_portfolio_node_display($js, $node_id) {
   $html = render($build);
 
   $commands[] = ajax_command_html('#portfolio-project-ajax-view', $html);
-  // print_r($node_id);
-  // print_r($js);
   print ajax_render($commands);
   exit;
 
